@@ -282,6 +282,15 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
       <div class="kpi-label">peso atual</div>
       <div class="kpi-value" style="color:var(--blue)">90,0<span style="font-size:15px;font-weight:400;color:var(--text3)"> kg</span></div>
       <div class="kpi-sub">medido 05/jun/26 · −8,5 kg desde fev/26</div>
+      <div style="display:flex;align-items:center;gap:6px;margin:4px 0 6px">
+        <div style="font-size:11px;color:var(--text3);font-family:var(--mono)">objetivo</div>
+        <div style="font-size:13px;font-weight:700;color:var(--green)">88,5 kg</div>
+        <div style="font-size:11px;color:var(--text3);font-family:var(--mono)">· faltam</div>
+        <div style="font-size:13px;font-weight:700;color:var(--amber)">1,5 kg</div>
+      </div>
+      <div style="width:100%;height:6px;background:var(--bg);border-radius:3px;overflow:hidden;margin-bottom:8px">
+        <div style="width:94%;height:100%;background:linear-gradient(90deg,var(--green),var(--amber));border-radius:3px"></div>
+      </div>
       <span class="pill p-ok">↓ melhorando</span>
     </div>
     <div class="kpi">
@@ -1003,7 +1012,7 @@ const tc='#9ca3af', gc='rgba(0,0,0,0.05)';
 const base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:tc,font:{size:10},maxRotation:45},grid:{color:gc},border:{color:'transparent'}},y:{ticks:{color:tc,font:{size:10}},grid:{color:gc},border:{color:'transparent'}}}};
 
 // PESO
-new Chart(document.getElementById('pesoChart'),{type:'line',data:{labels:['05/jan','10/jan','16/jan','26/jan','30/jan','02/fev','08/fev','13/fev','18/fev','25/fev','13/mar','27/abr','04/mai','01/jun','05/jun'],datasets:[{data:[95.1,93.9,93.6,94.6,94.0,95.7,98.5,95.1,93.8,95.3,95.5,93.8,92.5,92.7,90.0],borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,0.07)',borderWidth:2,pointRadius:4,fill:true,tension:0.35,pointBackgroundColor:(ctx)=>ctx.dataIndex===6?'#ef4444':ctx.dataIndex===13?'#3b82f6':ctx.dataIndex===12?'#059669':'#3b82f6',pointBorderColor:'#fff',pointBorderWidth:1.5}]},options:{...base,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toFixed(1)+' kg'}}},scales:{x:{ticks:{color:tc,font:{size:9},maxRotation:45},grid:{color:gc},border:{color:'transparent'}},y:{min:90,max:101,ticks:{color:tc,font:{size:10},callback:v=>v+' kg'},grid:{color:gc},border:{color:'transparent'}}}}});
+new Chart(document.getElementById('pesoChart'),{type:'line',data:{labels:['05/jan','10/jan','16/jan','26/jan','30/jan','02/fev','08/fev','13/fev','18/fev','25/fev','13/mar','27/abr','04/mai','01/jun','05/jun'],datasets:[{data:[95.1,93.9,93.6,94.6,94.0,95.7,98.5,95.1,93.8,95.3,95.5,93.8,92.5,92.7,90.0],borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,0.07)',borderWidth:2,pointRadius:4,fill:true,tension:0.35,pointBackgroundColor:(ctx)=>ctx.dataIndex===6?'#ef4444':ctx.dataIndex===13?'#3b82f6':ctx.dataIndex===12?'#059669':'#3b82f6',pointBorderColor:'#fff',pointBorderWidth:1.5},{label:'Meta',data:[88.5,88.5,88.5,88.5,88.5,88.5,88.5,88.5,88.5,88.5,88.5,88.5,88.5,88.5,88.5],borderColor:'rgba(220,38,38,0.55)',backgroundColor:'transparent',borderWidth:1.5,borderDash:[6,4],pointRadius:0,fill:false,tension:0}]},options:{...base,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label==='Meta'?'Meta: 88,5 kg':c.raw.toFixed(1)+' kg'}}},scales:{x:{ticks:{color:tc,font:{size:9},maxRotation:45},grid:{color:gc},border:{color:'transparent'}},y:{min:88,max:101,ticks:{color:tc,font:{size:10},callback:v=>v+' kg'},grid:{color:gc},border:{color:'transparent'}}}}});
 
 // TIPO
 new Chart(document.getElementById('tipoChart'),{type:'doughnut',data:{labels:['Crossfit','Ciclismo','Indoor','Natação','Corrida'],datasets:[{data:[46,17,11,16,2],backgroundColor:['#ef4444','#3b82f6','#8b5cf6','#10b981','#d1d5db'],borderWidth:2,borderColor:'#fff'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},cutout:'62%'}});
