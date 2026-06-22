@@ -6,18 +6,6 @@
 <title>Dashboard de Saúde — Roni Ruas 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<!-- ╔════════════════════════════════════════════════════╗ -->
-<!-- ║  MÓDULOS DE SERVIÇO                               ║ -->
-<!-- ╚════════════════════════════════════════════════════╝ -->
-<script src="js/date-utils.js"></script>
-<script src="js/cache-layer.js"></script>
-<script src="js/data-service.js"></script>
-<script src="js/chart-renderer.js"></script>
-<script src="js/table-renderer.js"></script>
-<script src="js/element-mapper.js"></script>
-<script src="js/dashboard-fixer.js"></script>
-<script src="js/init.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -238,7 +226,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
     </div>
   </div>
   <div class="header-right">
-    <div class="header-date" id="headerDate">📅 carregando...</div>
+    <div class="header-date">21/06/2026</div>
   </div>
 </header>
 
@@ -265,23 +253,23 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
   <div class="g4">
     <div class="kpi">
       <div class="kpi-label">treinos realizados</div>
-      <div class="kpi-value" style="color:var(--purple)" data-id="activity-count">98</div>
-      <div class="kpi-sub">em 164 dias</div>
+      <div class="kpi-value" style="color:var(--purple)">101</div>
+      <div class="kpi-sub">em 173 dias</div>
       <span class="pill p-purple">excelente</span>
     </div>
     <div class="kpi">
       <div class="kpi-label">calorias totais</div>
-      <div class="kpi-value" style="color:var(--red)" id="yearCaloriesTotal">0</div>
-      <div class="kpi-sub" id="yearCaloriesSub">kcal queimadas · média <strong id="calorieAvg">0 kcal/treino</strong></div>
+      <div class="kpi-value" style="color:var(--red)">82.399</div>
+      <div class="kpi-sub">kcal queimadas · média <strong>816 kcal/treino</strong></div>
       <span class="pill p-ok">valor real</span>
     </div>
     <div class="kpi">
       <div class="kpi-label">ciclismo total</div>
       <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:3px">
-        <div class="kpi-value" style="color:var(--blue);margin-bottom:0">850<span style="font-size:15px;font-weight:400;color:var(--text3)"> km</span></div>
+        <div class="kpi-value" style="color:var(--blue);margin-bottom:0">878<span style="font-size:15px;font-weight:400;color:var(--text3)"> km</span></div>
         <div style="font-size:16px;font-weight:600;color:var(--green)">+13.474<span style="font-size:12px;font-weight:400;color:var(--text3)"> m</span></div>
       </div>
-      <div class="kpi-sub">624 outdoor · 226 indoor</div>
+      <div class="kpi-sub">624 outdoor · 254 indoor</div>
       <span class="pill p-ok">maior: 91 km</span>
     </div>
     <div class="kpi">
@@ -292,7 +280,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
     </div>
     <div class="kpi">
       <div class="kpi-label">peso atual</div>
-      <div class="kpi-value" style="color:var(--blue)" data-id="current-weight">90,0<span style="font-size:15px;font-weight:400;color:var(--text3)"> kg</span></div>
+      <div class="kpi-value" style="color:var(--blue)">90,0<span style="font-size:15px;font-weight:400;color:var(--text3)"> kg</span></div>
       <div class="kpi-sub">medido 05/jun/26 · −8,5 kg desde fev/26</div>
       <div style="display:flex;align-items:center;gap:6px;margin:4px 0 6px">
         <div style="font-size:11px;color:var(--text3);font-family:var(--mono)">objetivo</div>
@@ -319,68 +307,68 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
     </div>
     <div class="kpi">
       <div class="kpi-label">score sono</div>
-      <div class="kpi-value" style="color:var(--green)">82</div>
-      <div class="kpi-sub">6h59 · 12/jun</div>
+      <div class="kpi-value" style="color:var(--green)">85</div>
+      <div class="kpi-sub">7h31 · 22/jun</div>
       <span class="pill p-ok">bom</span>
     </div>
   </div>
 
-  <div class="sec-label">monitoramento diário — <span id="dailyDateLabel">carregando...</span></div>
+  <div class="sec-label">monitoramento diário — 22/06/2026</div>
   <div class="g4">
     <div class="kpi">
       <div class="kpi-label">passos hoje</div>
-      <div class="kpi-value" style="color:var(--green)" id="stepsValue">0</div>
-      <div class="kpi-sub">meta: 5.000 · <span id="stepsDate">--/--/----</span></div>
-      <span class="pill p-ok" id="stepsPill">carregando...</span>
+      <div class="kpi-value" style="color:var(--amber)">3.276</div>
+      <div class="kpi-sub">meta: 5.000 · 22/06/2026</div>
+      <span class="pill p-warn">dia em andamento</span>
       <div class="chart-wrap" style="height:48px;margin-top:10px"><canvas id="sparkSteps"></canvas></div>
       <div style="font-size:10px;color:var(--text3);margin-top:3px;font-family:var(--mono)">últimos 30 dias</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">min. intensidade (semana)</div>
-      <div class="kpi-value" style="color:var(--amber)">258<span style="font-size:14px;font-weight:400;color:var(--text3)"> /300</span></div>
-      <div class="kpi-sub">149 mod · 109 vig · semana 08-13/jun</div>
+      <div class="kpi-value" style="color:var(--amber)">58<span style="font-size:14px;font-weight:400;color:var(--text3)"> /300</span></div>
+      <div class="kpi-sub">28 mod · 30 vig · semana 22/jun</div>
       <span class="pill p-warn">abaixo da meta</span>
       <div class="chart-wrap" style="height:48px;margin-top:10px"><canvas id="sparkIntensity"></canvas></div>
       <div style="font-size:10px;color:var(--text3);margin-top:3px;font-family:var(--mono)">últimas 5 semanas</div>
     </div>
     <div class="kpi" style="border-color:var(--amber-border)">
       <div class="kpi-label">prontidão para treino</div>
-      <div class="kpi-value" style="color:var(--amber)" id="readinessValue">--<span style="font-size:14px;font-weight:400;color:var(--text3)"> /100</span></div>
-      <div class="kpi-sub" id="readinessSub">carregando...</div>
-      <span class="pill p-warn" id="readinessPill">carregando...</span>
+      <div class="kpi-value" style="color:var(--amber)">59<span style="font-size:14px;font-weight:400;color:var(--text3)"> /100</span></div>
+      <div class="kpi-sub">recuperação necessária · 22/jun</div>
+      <span class="pill p-warn">MODERATE ⚡ após treino</span>
       <div style="margin-top:10px;display:flex;flex-direction:column;gap:4px">
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">HRV</span><span style="color:var(--green);font-weight:600">100% ✓</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Hist. Stress</span><span style="color:var(--green);font-weight:600">83% ✓</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Recuperação</span><span style="color:var(--amber);font-weight:600">66%</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Carga</span><span style="color:var(--green);font-weight:600">86% ✓</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Sono</span><span style="color:var(--amber);font-weight:600">74%</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">HRV</span><span style="color:var(--green);font-weight:600">81% ✓</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Hist. Stress</span><span style="color:var(--green);font-weight:600">93% ✓</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Recuperação</span><span style="color:var(--red);font-weight:600">36% ⚠</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Carga</span><span style="color:var(--green);font-weight:600">100% ✓</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Sono</span><span style="color:var(--green);font-weight:600">80% ✓</span></div>
       </div>
     </div>
     <div class="kpi" style="border-color:var(--green-border)">
       <div class="kpi-label">status VFC</div>
-      <div class="kpi-value" style="color:var(--green)" id="hrvValue">--<span style="font-size:14px;font-weight:400;color:var(--text3)"> ms</span></div>
-      <div class="kpi-sub" id="hrvSub">carregando...</div>
-      <span class="pill p-ok" id="hrvPill">carregando...</span>
+      <div class="kpi-value" style="color:var(--green)">43<span style="font-size:14px;font-weight:400;color:var(--text3)"> ms</span></div>
+      <div class="kpi-sub">baseline: 46–56 ms · média sem: 47ms</div>
+      <span class="pill p-ok">BALANCED ✓</span>
       <div class="chart-wrap" style="height:48px;margin-top:10px"><canvas id="sparkHRV"></canvas></div>
       <div style="font-size:10px;color:var(--text3);margin-top:3px;font-family:var(--mono)">últimos 30 dias</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">score do sono</div>
-      <div class="kpi-value" style="color:var(--green)">82</div>
-      <div class="kpi-sub">6h59 · 23h07→06h09</div>
+      <div class="kpi-value" style="color:var(--green)">85</div>
+      <div class="kpi-sub">7h31 · 22h04→05h42</div>
       <span class="pill p-ok">bom</span>
       <div style="margin-top:10px;display:flex;flex-direction:column;gap:4px">
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Sono real</span><span style="font-weight:600">6h59</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Fator sono</span><span style="color:var(--amber);font-weight:600">74%</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Hist. sono</span><span style="color:var(--green);font-weight:600">84% ✓</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Respiração</span><span style="color:var(--green);font-weight:600">13 rpm ✓</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Sono real</span><span style="font-weight:600">7h31</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Fator sono</span><span style="color:var(--green);font-weight:600">80% ✓</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Hist. sono</span><span style="color:var(--green);font-weight:600">82% ✓</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--text2)">Respiração</span><span style="color:var(--green);font-weight:600">15 rpm ✓</span></div>
       </div>
     </div>
     <div class="kpi">
       <div class="kpi-label">body battery</div>
-      <div class="kpi-value" style="color:var(--amber)">41<span style="font-size:14px;font-weight:400;color:var(--text3)"> /100</span></div>
-      <div class="kpi-sub">acordou: 100 · drenou: −59 · carregou: +59</div>
-      <span class="pill p-warn">pós-treino</span>
+      <div class="kpi-value" style="color:var(--amber)">68<span style="font-size:14px;font-weight:400;color:var(--text3)"> /100</span></div>
+      <div class="kpi-sub">acordou 100 · carregou +39 drenou −33</div>
+      <span class="pill p-warn">bom 🔋</span>
       <div class="chart-wrap" style="height:48px;margin-top:10px"><canvas id="sparkBB"></canvas></div>
       <div style="font-size:10px;color:var(--text3);margin-top:3px;font-family:var(--mono)">últimos 7 dias (fim do dia)</div>
     </div>
@@ -395,7 +383,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
     <div class="kpi">
       <div class="kpi-label">stress médio semanal</div>
       <div class="kpi-value" style="color:var(--green)">23<span style="font-size:14px;font-weight:400;color:var(--text3)"> hoje</span></div>
-      <div class="kpi-sub">média 5 sem: 27 · baixo</div>
+      <div class="kpi-sub">média 5 sem: 26 · baixo</div>
       <span class="pill p-ok">excelente</span>
       <div class="chart-wrap" style="height:48px;margin-top:10px"><canvas id="sparkStress"></canvas></div>
       <div style="font-size:10px;color:var(--text3);margin-top:3px;font-family:var(--mono)">últimas 4 semanas</div>
@@ -405,14 +393,14 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
   <div class="sec-label">prontidão para treino — detalhamento</div>
   <div class="g2">
     <div class="card">
-      <div class="card-title"><span>fatores da prontidão — 11/06</span><span class="pill p-warn">score 75 · MODERADA</span></div>
-      <div class="bar-row"><span class="bar-lbl">HRV</span><div class="bar-bg"><div class="bar-fill" style="width:100%;background:#059669"></div></div><span class="bar-val">100% BOM</span></div>
-      <div class="bar-row"><span class="bar-lbl">Hist. Stress</span><div class="bar-bg"><div class="bar-fill" style="width:86%;background:#059669"></div></div><span class="bar-val">86% BOM</span></div>
-      <div class="bar-row"><span class="bar-lbl">Recuperação</span><div class="bar-bg"><div class="bar-fill" style="width:60%;background:#d97706"></div></div><span class="bar-val">60% MED</span></div>
-      <div class="bar-row"><span class="bar-lbl">Carga Treino</span><div class="bar-bg"><div class="bar-fill" style="width:72%;background:#059669"></div></div><span class="bar-val">72% BOM</span></div>
-      <div class="bar-row"><span class="bar-lbl">Sono</span><div class="bar-bg"><div class="bar-fill" style="width:90%;background:#059669"></div></div><span class="bar-val">90% BOM</span></div>
-      <div class="bar-row"><span class="bar-lbl">Hist. Sono</span><div class="bar-bg"><div class="bar-fill" style="width:69%;background:#d97706"></div></div><span class="bar-val">69% MED</span></div>
-      <div class="alert-box alert-green" style="margin-top:10px">✓ Prontidão MODERADA (64/100) após Ciclismo 36,7km · 1.241 kcal. BB excelente (88/100). HRV BALANCED (49ms). Pode treinar com intensidade moderada. Recuperação em ~21,3h.</div>
+      <div class="card-title"><span>fatores da prontidão — 22/06</span><span class="pill p-warn">score 59 · MODERATE ⚡</span></div>
+      <div class="bar-row"><span class="bar-lbl">HRV</span><div class="bar-bg"><div class="bar-fill" style="width:81%;background:#059669"></div></div><span class="bar-val">81% BOM</span></div>
+      <div class="bar-row"><span class="bar-lbl">Hist. Stress</span><div class="bar-bg"><div class="bar-fill" style="width:93%;background:#059669"></div></div><span class="bar-val">93% BOM</span></div>
+      <div class="bar-row"><span class="bar-lbl">Recuperação</span><div class="bar-bg"><div class="bar-fill" style="width:36%;background:#dc2626"></div></div><span class="bar-val">36% ⚠</span></div>
+      <div class="bar-row"><span class="bar-lbl">Carga Treino</span><div class="bar-bg"><div class="bar-fill" style="width:100%;background:#059669"></div></div><span class="bar-val">100% BOM</span></div>
+      <div class="bar-row"><span class="bar-lbl">Sono</span><div class="bar-bg"><div class="bar-fill" style="width:80%;background:#059669"></div></div><span class="bar-val">80% BOM</span></div>
+      <div class="bar-row"><span class="bar-lbl">Hist. Sono</span><div class="bar-bg"><div class="bar-fill" style="width:82%;background:#059669"></div></div><span class="bar-val">82% BOM</span></div>
+      <div class="alert-box alert-amber" style="margin-top:10px">🏋️ Crossfit realizado hoje (06h06 · 607 kcal · FC máx 174). Prontidão APÓS TREINO (59/100) · recuperação: 40,8h. HRV BALANCED 43ms (81%). Sono BOM (85/100 · 7h31). BB 68/100. Descanse bem hoje!</div>
     </div>
     <div class="card">
       <div class="card-title"><span>minutos de intensidade — últimas 5 semanas</span><span class="pill p-info">meta: 300/sem</span></div>
@@ -466,16 +454,16 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
   <div class="sec-label">distribuição de treinos</div>
   <div class="g2">
     <div class="card">
-      <div class="card-title"><span>por modalidade</span><span class="pill p-purple">96 atividades</span></div>
+      <div class="card-title"><span>por modalidade</span><span class="pill p-purple">101 atividades</span></div>
       <div style="display:flex;gap:16px;align-items:center">
         <div style="width:140px;height:140px;flex-shrink:0">
-          <canvas id="tipoChart" role="img" aria-label="Crossfit 56%, Ciclismo 19%, Indoor 10%, Natação 13%, Corrida 2%">Treinos 2026.</canvas>
+          <canvas id="tipoChart" role="img" aria-label="Crossfit 51%, Ciclismo 18%, Indoor 14%, Natação 16%, Corrida 2%">Treinos 2026.</canvas>
         </div>
         <div style="flex:1">
-          <div class="act-row"><div class="act-dot" style="background:#ef4444"></div><span class="act-name">Crossfit</span><span class="act-count">48</span><div class="act-bar-bg"><div class="act-bar-fill" style="width:100%;background:#ef4444"></div></div></div>
-          <div class="act-row"><div class="act-dot" style="background:#3b82f6"></div><span class="act-name">Ciclismo outdoor</span><span class="act-count">18</span><div class="act-bar-bg"><div class="act-bar-fill" style="width:37%;background:#3b82f6"></div></div></div>
-          <div class="act-row"><div class="act-dot" style="background:#8b5cf6"></div><span class="act-name">Ciclismo indoor</span><span class="act-count">13</span><div class="act-bar-bg"><div class="act-bar-fill" style="width:27%;background:#8b5cf6"></div></div></div>
-          <div class="act-row"><div class="act-dot" style="background:#10b981"></div><span class="act-name">Natação</span><span class="act-count">16</span><div class="act-bar-bg"><div class="act-bar-fill" style="width:35%;background:#10b981"></div></div></div>
+          <div class="act-row"><div class="act-dot" style="background:#ef4444"></div><span class="act-name">Crossfit</span><span class="act-count">51</span><div class="act-bar-bg"><div class="act-bar-fill" style="width:100%;background:#ef4444"></div></div></div>
+          <div class="act-row"><div class="act-dot" style="background:#3b82f6"></div><span class="act-name">Ciclismo outdoor</span><span class="act-count">18</span><div class="act-bar-bg"><div class="act-bar-fill" style="width:35%;background:#3b82f6"></div></div></div>
+          <div class="act-row"><div class="act-dot" style="background:#8b5cf6"></div><span class="act-name">Ciclismo indoor</span><span class="act-count">14</span><div class="act-bar-bg"><div class="act-bar-fill" style="width:27%;background:#8b5cf6"></div></div></div>
+          <div class="act-row"><div class="act-dot" style="background:#10b981"></div><span class="act-name">Natação</span><span class="act-count">16</span><div class="act-bar-bg"><div class="act-bar-fill" style="width:31%;background:#10b981"></div></div></div>
           <div class="act-row"><div class="act-dot" style="background:#9ca3af"></div><span class="act-name">Corrida</span><span class="act-count">2</span><div class="act-bar-bg"><div class="act-bar-fill" style="width:4%;background:#9ca3af"></div></div></div>
         </div>
       </div>
@@ -488,39 +476,39 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
     </div>
   </div>
 
-  <div class="sec-label">HRV — variabilidade cardíaca (mai/jun 2026 · atualizado 13/06/2026)</div>
+  <div class="sec-label">HRV — variabilidade cardíaca (mai/jun 2026 · atualizado 22/06/2026)</div>
   <div class="card">
     <div class="card-title">
       <span>HRV noturno diário</span>
       <div style="display:flex;gap:6px;flex-wrap:wrap">
         <span class="hrv-tag hrv-low">LOW — 6 dias</span>
         <span class="hrv-tag hrv-unbal">UNBALANCED — 22 dias</span>
-        <span class="hrv-tag hrv-bal">BALANCED — 13 dias</span>
+        <span class="hrv-tag hrv-bal">BALANCED — 22 dias</span>
       </div>
     </div>
     <div style="display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap">
       <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 14px;font-size:12px;">
-        <div style="font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:3px">HRV hoje (13/06)</div>
-        <strong style="font-size:18px;color:var(--green)">48</strong><span style="font-size:11px;color:var(--text3)"> ms</span>
+        <div style="font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:3px">HRV hoje (22/06)</div>
+        <strong style="font-size:18px;color:var(--green)">43</strong><span style="font-size:11px;color:var(--text3)"> ms</span>
         <span class="hrv-tag hrv-bal" style="margin-left:6px">BALANCED ✓</span>
       </div>
       <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 14px;font-size:12px;">
         <div style="font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:3px">Média semanal</div>
-        <strong style="font-size:18px;color:var(--green)">49</strong><span style="font-size:11px;color:var(--text3)"> ms</span>
+        <strong style="font-size:18px;color:var(--green)">47</strong><span style="font-size:11px;color:var(--text3)"> ms</span>
       </div>
       <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 14px;font-size:12px;">
         <div style="font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:3px">FC repouso</div>
-        <strong style="font-size:18px;color:var(--green)">49</strong><span style="font-size:11px;color:var(--text3)"> bpm</span>
+        <strong style="font-size:18px;color:var(--green)">50</strong><span style="font-size:11px;color:var(--text3)"> bpm</span>
       </div>
       <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 14px;font-size:12px;">
         <div style="font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:3px">Body Battery atual</div>
-        <strong style="font-size:18px;color:var(--amber)">41</strong><span style="font-size:11px;color:var(--text3)"> /100 (pós-treino)</span>
+        <strong style="font-size:18px;color:var(--amber)">68</strong><span style="font-size:11px;color:var(--text3)"> /100</span>
       </div>
     </div>
     <div class="chart-wrap" style="height:155px">
-      <canvas id="hrvChart" role="img" aria-label="HRV maio 2026 entre 57-92ms predominantemente unbalanced">HRV maio/jun.</canvas>
+      <canvas id="hrvChart" role="img" aria-label="HRV mai-jun 2026 —  22 dias BALANCED em junho">HRV maio/jun.</canvas>
     </div>
-    <div class="alert-box alert-green">✓ HRV BALANCED (49ms)! BB excelente (88/100) após 6h59 de sono. Prontidão moderada (64/100) pós-Ciclismo 36,7km. Pode treinar com intensidade moderada. Recuperação em ~21,3h.</div>
+    <div class="alert-box alert-amber">🏋️ Crossfit realizado hoje (607 kcal · FC máx 174). HRV BALANCED 43ms apó treino. Recuperação necessária: 40,8h. BB 68/100. Sono BOM (85/100 · 7h31). 22 dias BALANCED consecutivos em junho!</div>
   </div>
 
   <div class="sec-label">últimas 20 atividades</div>
@@ -529,11 +517,14 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
       <span>Tipo</span><span>Data / Nome</span><span>Duração</span><span>Kcal</span>
       <span class="hide-sm">FC méd</span><span class="hide-sm">FC máx</span>
     </div>
-    <div class="act-list-row" style="background:var(--blue-bg)"><span><span class="pill p-alert" style="font-size:9px">Ciclismo</span> 🆕</span><span>13/06 07h19 — 36,7km</span><span>2h20</span><span>1.241</span><span class="hide-sm">131</span><span class="hide-sm">164</span></div>
+    <div class="act-list-row" style="background:var(--blue-bg)"><span><span class="pill p-warn" style="font-size:9px">Crossfit</span> 🆕</span><span>22/06 06h06</span><span>1h16</span><span>607</span><span class="hide-sm">119</span><span class="hide-sm">174</span></div>
+    <div class="act-list-row"><span><span class="pill p-warn" style="font-size:9px">Crossfit</span></span><span>16/06 12h20</span><span>1h01</span><span>599</span><span class="hide-sm">129</span><span class="hide-sm">163</span></div>
+    <div class="act-list-row"><span><span class="pill p-purple" style="font-size:9px">Indoor</span></span><span>15/06 18h55 — 28km</span><span>59min</span><span>373</span><span class="hide-sm">105</span><span class="hide-sm">126</span></div>
+    <div class="act-list-row"><span><span class="pill p-alert" style="font-size:9px">Ciclismo</span></span><span>13/06 07h19 — 36,7km</span><span>2h20</span><span>1.241</span><span class="hide-sm">131</span><span class="hide-sm">164</span></div>
     <div class="act-list-row"><span><span class="pill p-warn" style="font-size:9px">Crossfit</span></span><span>12/06 06h03</span><span>1h15</span><span>659</span><span class="hide-sm">122</span><span class="hide-sm" style="color:var(--red);font-weight:600">177 ⚠</span></div>
-    <div class="act-list-row" style="background:var(--blue-bg)"><span><span class="pill p-purple" style="font-size:9px">Indoor</span></span><span>11/06 18h56</span><span>56min — 20km</span><span>375</span><span class="hide-sm">108</span><span class="hide-sm">151</span></div>
+    <div class="act-list-row"><span><span class="pill p-purple" style="font-size:9px">Indoor</span></span><span>11/06 18h56 — 20km</span><span>56min</span><span>375</span><span class="hide-sm">108</span><span class="hide-sm">151</span></div>
     <div class="act-list-row"><span><span class="pill p-warn" style="font-size:9px">Crossfit</span></span><span>10/06 06h05</span><span>1h10</span><span>549</span><span class="hide-sm">113</span><span class="hide-sm">165</span></div>
-    <div class="act-list-row"><span><span class="pill p-purple" style="font-size:9px">Indoor</span></span><span>09/06 11h16</span><span>1h00 — 26,4km</span><span>415</span><span class="hide-sm">110</span><span class="hide-sm">130</span></div>
+    <div class="act-list-row"><span><span class="pill p-purple" style="font-size:9px">Indoor</span></span><span>09/06 11h16 — 26,4km</span><span>1h00</span><span>415</span><span class="hide-sm">110</span><span class="hide-sm">130</span></div>
     <div class="act-list-row"><span><span class="pill p-warn" style="font-size:9px">Crossfit</span></span><span>08/06 06h04</span><span>1h16</span><span>638</span><span class="hide-sm">120</span><span class="hide-sm">171</span></div>
     <div class="act-list-row"><span><span class="pill p-alert" style="font-size:9px">Ciclismo</span></span><span>06/06 07h22 — 36,9km</span><span>5h16</span><span>2.243</span><span class="hide-sm">119</span><span class="hide-sm" style="color:var(--amber);font-weight:600">181 ⚠</span></div>
     <div class="act-list-row"><span><span class="pill p-warn" style="font-size:9px">Crossfit</span></span><span>05/06 06h03</span><span>1h19</span><span>738</span><span class="hide-sm">126</span><span class="hide-sm">184</span></div>
@@ -793,7 +784,58 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
         <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Hematócrito</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">46,3%</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">45,2%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">39,2–49,0%</td><td style="padding:9px 14px;text-align:center"><span class="pill p-ok">normal</span></td></tr>
         <tr style="border-bottom:1px solid var(--border);background:var(--red-bg)"><td style="padding:9px 14px;color:var(--text)">HCM</td><td style="padding:9px 14px;text-align:center;font-weight:700;font-family:var(--mono);color:var(--red)">27,0 pg</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono);color:var(--red)">26,7</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">27,7–32,7</td><td style="padding:9px 14px;text-align:center"><span class="pill p-alert">⚠ baixo</span></td></tr>
         <tr style="border-bottom:1px solid var(--border);background:var(--red-bg)"><td style="padding:9px 14px;color:var(--text)">VCM</td><td style="padding:9px 14px;text-align:center;font-weight:700;font-family:var(--mono);color:var(--red)">80,1 fL</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono);color:var(--red)">78,3</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">81,7–95,3</td><td style="padding:9px 14px;text-align:center"><span class="pill p-alert">⚠ baixo</span></td></tr>
-        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">CHCM</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">33,7 g/dL</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">34,1</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">32,4–36,0</td><td style="padding:9px 14px;text-align:center"><span class="pill p-ok">normal</span></td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">CHMM</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">33,3 g/dL</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">34,1</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">32,4–36,0</td><td style="padding:9px 14px;text-align:center"><span class="pill p-ok">normal</span></td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">RDW</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">12,1%</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">12,7%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">11,8–14,1%</td><td style="padding:9px 14px;text-align:center"><span class="pill p-ok">normal</span></td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Leucócitos</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">4.470</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">4.220</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">3.650–8.120/mm³</td><td style="padding:9px 14px;text-align:center"><span class="pill p-ok">normal</span></td></tr>
+        <tr><td style="padding:9px 14px;color:var(--text)">Plaquetas</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">216.000</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">200.000</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">151–304 mil/mm³</td><td style="padding:9px 14px;text-align:center"><span class="pill p-ok">normal</span></td></tr>
+      </tbody>
+    </table>
+    <div class="alert-box alert-amber" style="margin:0 16px 16px">⚠ HCM e VCM persistentemente abaixo em todos os exames históricos — investigar talassemia minor (solicitar eletroforese de hemoglobina)</div>
+  </div>
+
+  <!-- HORMÔNIOS -->
+  <div class="sec-label">hormônios — mar/26</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">hormônios sexuais e suprarrenais</div>
+      <div class="exam-row"><span class="exam-lbl">Testosterona total</span><div class="exam-right"><span class="exam-val">418 ng/dL</span><span class="pill p-info">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">Testosterona livre</span><div class="exam-right"><span class="exam-val">360,3 pmol/L</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">DHU</span><div class="exam-right"><span class="exam-val">24 ng/dL</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">SHBG</span><div class="exam-right"><span class="exam-val">23 nmol/L</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">Estradiol</span><div class="exam-right"><span class="exam-val">1,8 ng/dL</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">FSH</span><div class="exam-right"><span class="exam-val">6,3 UI/L</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">LH</span><div class="exam-right"><span class="exam-val">4,7 UI/L</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">Prolactina</span><div class="exam-right"><span class="exam-val">15 mcg/L</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">DHEA-S</span><div class="exam-right"><span class="exam-val">116 mcg/dL</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">Cortisol (manhã)</span><div class="exam-right"><span class="exam-val">12,0 mcg/dL</span><span class="pill p-ok">normal</span></div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">tireoide e função orgânica</div>
+      <div class="exam-row"><span class="exam-lbl">TSH</span><div class="exam-right"><span class="exam-val">1,2 mUI/L</span><span class="pill p-ok">ótimo</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">T4 Livre</span><div class="exam-right"><span class="exam-val">1,5 ng/dL</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">Creatinina</span><div class="exam-right"><span class="exam-val">1,20 mg/dL</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">TFG (CKD-EPI)</span><div class="exam-right"><span class="exam-val">76 mL/min</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">Ureia</span><div class="exam-right"><span class="exam-val">42 mg/dL</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">TGO (AST)</span><div class="exam-right"><span class="exam-val">32 U/L</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">TGP (ALT)</span><div class="exam-right"><span class="exam-val">36 U/L</span><span class="pill p-ok">normal</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">Gama-GT</span><div class="exam-right"><span class="exam-val">13 U/L</span><span class="pill p-ok">ótimo</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">CK</span><div class="exam-right"><span class="exam-val">177 U/L</span><span class="pill p-warn">leve alta</span></div></div>
+      <div class="exam-row"><span class="exam-lbl">Ácido Úrico</span><div class="exam-right"><span class="exam-val">5,8 mg/dL</span><span class="pill p-ok">normal</span></div></div>
+    </div>
+  </div>
+
+  <!-- VITAMINAS E MINERAIS -->
+  <div class="sec-label">vitaminas, minerais e micronutrientes — mar/26</div>
+  <div class="card" style="padding:0;overflow:hidden">
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <thead>
+        <tr style="background:var(--surface2);border-bottom:2px solid var(--border)">
+          <th style="padding:10px 14px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);font-family:var(--mono);width:28%">Parâmetro</th>
+          <th style="padding:10px 14px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);font-family:var(--mono);width:9%">Mar/26</th>
+          <th style="padding:10px 14px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);font-family:var(--mono);width:9%">Dez/25</th>
+          <th style="padding:10px 14px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);font-family:var(--mono);width:9%">Ago/25</th>
+          <th style="padding:10px 14px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);font-family:var(--mono);width:9%">Mai/25</th>
+          <th style="padding:10px 14px;text-align:center;font-size:11px;font-weight:700;letter-yle="padding:9px 14px;color:var(--text)">CHCM</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">33,7 g/dL</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">34,1</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">32,4–36,0</td><td style="padding:9px 14px;text-align:center"><span class="pill p-ok">normal</span></td></tr>
         <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">RDW</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">12,1%</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">12,7%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">11,8–14,1%</td><td style="padding:9px 14px;text-align:center"><span class="pill p-ok">normal</span></td></tr>
         <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Leucócitos</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">4.470</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">4.220</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">3.650–8.120/mm³</td><td style="padding:9px 14px;text-align:center"><span class="pill p-ok">normal</span></td></tr>
         <tr><td style="padding:9px 14px;color:var(--text)">Plaquetas</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">216.000</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">200.000</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">151–304 mil/mm³</td><td style="padding:9px 14px;text-align:center"><span class="pill p-ok">normal</span></td></tr>
@@ -954,7 +996,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
         <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Gota</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">20,69%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">Entre 19,65% e 21,72%</td><td style="padding:9px 14px;text-align:center"><span class="pill p-info">risco padrão</span></td></tr>
         <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Doença de Alzheimer</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">12,16%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">Até 75 anos</td><td style="padding:9px 14px;text-align:center"><span class="pill p-info">risco padrão</span></td></tr>
         <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Câncer colorretal</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">7,96%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">Entre 7,56% e 8,35%</td><td style="padding:9px 14px;text-align:center"><span class="pill p-info">risco padrão</span></td></tr>
-        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Carcinoma basocelular</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">6,44%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">Até 75 anos</td><td style="padding:9px 14px;text-align:center"><span class="pill p-info">risco padrão</span></td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Carcinoma basocelular</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">6,44%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">Até 75 anos</td><td style="padding:9px 14px text-align:center"><span class="pill p-info">risco padrão</span></td></tr>
         <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Moléstia de Dupuytren</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">4,85%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">Entre 4,60% e 5,09%</td><td style="padding:9px 14px;text-align:center"><span class="pill p-info">risco padrão</span></td></tr>
         <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Doença intestinal inflamatória</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">3,25%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">Entre 3,09% e 3,41%</td><td style="padding:9px 14px;text-align:center"><span class="pill p-info">risco padrão</span></td></tr>
         <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 14px;color:var(--text)">Melanoma</td><td style="padding:9px 14px;text-align:center;font-weight:600;font-family:var(--mono)">2,57%</td><td style="padding:9px 14px;text-align:center;color:var(--text2);font-size:12px">Entre 2,44% e 2,70%</td><td style="padding:9px 14px;text-align:center"><span class="pill p-info">risco padrão</span></td></tr>
@@ -1000,34 +1042,41 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
   <div class="card">
     <div class="insight-list">
       <div class="insight-row"><div class="dot dot-r"></div><div class="insight-body"><strong>Risco genético aumentado para Diabetes tipo 2 (53,83%) + HOMA-IR 3,1 atual = alerta duplo</strong><span>A combinação de predisposição genética com resistência à insulina já em curso é o maior ponto de atenção. Controle rigoroso de carboidratos refinados, manutenção do treino aeróbico e redução de gordura corporal são a melhor defesa. Monitorar HOMA-IR a cada 3 meses.</span></div></div>
-      <div class="insight-row"><div class="dot dot-r"></div><div class="insight-body"><strong>Risco genético aumentado para Fibrilação Atrial (25,28%) — FC máxima de 196 bpm já registrada</strong><span>Predisposição genética somada a episódios de FC muito elevada no treino requer atenção cardiológica. Discutir com cardiologista sobre monitoramento periódico (ECG, Holter). Evitar treinos onde a FC ultrapasse consistentemente 185–190 bpm.</span></div></div>
-      <div class="insight-row"><div class="dot dot-r"></div><div class="insight-body"><strong>Predisposição para menor densidade óssea (WNT16) + Discopatia lombar L4-L5/L5-S1 já confirmada</strong><span>Duplo risco para saúde óssea. Garantir ingestão adequada de cálcio e vitamina D (já em 53 ng/mL — ótimo). Evitar cargas axiais pesadas no Crossfit. Solicitar densitometria óssea ao médico.</span></div></div>
-      <div class="insight-row"><div class="dot dot-a"></div><div class="insight-body"><strong>Predisposição para Tendinopatia de Aquiles (MMP3) — risco real no Crossfit</strong><span>Saltos, double-unders, corda e movimentos olímpicos sobrecarregam o tendão. Aquecimento específico de tornozelo/panturrilha antes dos treinos e monitorar qualquer dor na região posterior do calcanhar.</span></div></div>
-      <div class="insight-row"><div class="dot dot-a"></div><div class="insight-body"><strong>Ganho de massa muscular mais difícil geneticamente (PPARD) — resultado em andamento é conquista real</strong><span>Apesar da predisposição desfavorável, você ganhou +0,7 kg de músculo em 6 meses. Isso confirma que o volume e consistência do treino estão adequados. Priorizar ingestão proteica (1,8–2,2g/kg/dia).</span></div></div>
-      <div class="insight-row"><div class="dot dot-a"></div><div class="insight-body"><strong>Recuperação FC mais lenta após treino (CHRM2) — explicação genética para o HRV baixo</strong><span>A predisposição para recuperação cardíaca mais lenta é consistente com os dados de HRV UNBALANCED persistente. Isso reforça ainda mais a necessidade de dias de recuperação ativa e sono de qualidade.</span></div></div>
-      <div class="insight-row"><div class="dot dot-g"></div><div class="insight-body"><strong>DNA confirma aptidão para Força, Ciclismo e Resistência (ACTN3, NFIA-AS2, PPARA, CNTF)</strong><span>Geneticamente favorecido para as 3 modalidades que você já pratica. O combo Crossfit + Ciclismo está perfeitamente alinhado com seu perfil genético. Continue investindo nessas modalidades.</span></div></div>
-      <div class="insight-row"><div class="dot dot-g"></div><div class="insight-body"><strong>Risco reduzido para câncer de próstata (17,65%) e doença de Crohn</strong><span>Boas notícias no perfil genético. Manter o estilo de vida ativo e alimentação equilibrada para sustentar esses benefícios.</span></div></div>
-    </div>
-  </div>
+      <div class="insight-row"><div class="dot dot-r"></div><div class="insight-body"><strong>Risco genético aumentado para Fibrilação AtrialFIG
+const spark = (id, data, color, fill=true) => {
+  const el = document.getElementById(id); if(!el) return;
+  new Chart(el,{type:'line',data:{labels:data.map((_,i)=>i),datasets:[{data,borderColor:color,borderWidth:2,pointRadius:0,fill,backgroundColor:color.replace('rgb(','rgba(').replace(')',',0.08)'),tension:0.35,spanGaps:true}]},options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false}}}});
+};
 
-</div><!-- /main -->
-</div><!-- /page-dna -->
+// PASSOS 30 dias
+spark('sparkSteps',[3345,7627,3766,5221,5363,3203,5591,3373,8210,3691,6136,4321,5879,2055,3557,9127,3698,8411,5546,7958,5176,5453,4813,4104,5823,6251,6565,3637,5131,3276],'rgb(59,130,246)');
 
-<footer class="footer">
-  dashboard de saúde · roni ruas de oliveira · atualizado 13/06/2026 às 12h00 · garmin connect + fleury laboratório + lookinbody120 + genera dna + são luiz morumbi
-</footer>
+// VFC 30 dias (HRV avg)
+spark('sparkHRV',[60,null,65,59,58,64,57,71,67,92,47,68,68,67,45,54,52,49,48,54,49,56,52,55,50,49,48,42,44,43],'rgb(5,150,105)');
 
-<script>
-function switchTab(id) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  event.currentTarget.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
+// BODY BATTERY (fim do dia - 7 dias)
+spark('sparkBB',[43,40,43,18,42,61,68],'rgb(245,158,11)');
 
-// Todos os scripts de inicialização foram movidos para js/init.js
-// O dashboard será inicializado automaticamente quando a página carregar
-</script>
-</body>
-</html>
+// FC REPOUSO semanal (semanas mai/jun — estimado a partir de dados disponíveis)
+spark('sparkRHR',[51,50,49,50,49],'rgb(37,99,235)');
+
+// STRESS semanal
+spark('sparkStress',[31,29,25,23,23],'rgb(16,185,129)');
+
+// INTENSIDADE SEMANAL (total min por semana)
+new Chart(document.getElementById('sparkIntensity'),{type:'bar',data:{labels:['18/mai','25/mai','01/jun','08/jun','15/jun'],datasets:[{data:[137,237,501,370,121],backgroundColor:(ctx)=>ctx.raw>=300?'rgba(5,150,105,0.7)':'rgba(245,158,11,0.7)',borderRadius:3,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false}}}});
+
+// INTENSIDADE SEMANAL
+new Chart(document.getElementById('intensityChart'),{type:'bar',data:{labels:['18-24/mai','25-31/mai','01-07/jun','08-14/jun','15-21/jun','22+/jun'],datasets:[{label:'Moderado',data:[39,91,228,191,84,28],backgroundColor:'rgba(59,130,246,0.75)',borderRadius:3,borderSkipped:false},{label:'Vigoroso',data:[98,146,273,179,37,30],backgroundColor:'rgba(239,68,68,0.75)',borderRadius:3,borderSkipped:false}]},options:{...base,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.raw+' min'}}},scales:{x:{stacked:false,ticks:{color:tc,font:{size:10},maxRotation:30},grid:{color:gc},border:{color:'transparent'}},y:{ticks:{color:tc,font:{size:10},callback:v=>v+' min'},grid:{color:gc},border:{color:'transparent'}}},annotation:{annotations:{goal:{type:'line',yMin:300,yMax:300,borderColor:'rgba(239,68,68,0.5)',borderWidth:1.5,borderDash:[4,4]}}}}});
+
+// PASSOS SEMANAIS
+new Chart(document.getElementById('stepsWeekChart'),{type:'bar',data:{labels:['22/jun'],datasets:[{data:[3276],backgroundColor:(ctx)=>ctx.raw>=5000?'rgba(5,150,105,0.7)':'rgba(217,119,6,0.7)',borderRadius:4,borderSkipped:false}]},options:{...base,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toLocaleString()+' passos'}}},scales:{x:{ticks:{color:tc,font:{size:10}},grid:{color:gc},border:{color:'transparent'}},y:{ticks:{color:tc,font:{size:10},callback:v=>v.toLocaleString()},grid:{color:gc},border:{color:'transparent'}}}}});
+
+// BODY BATTERY SEMANAL
+new Chart(document.getElementById('bbWeekChart'),{type:'bar',data:{labels:['22/jun'],datasets:[{label:'Carregou',data:[39],backgroundColor:'rgba(5,150,105,0.7)',borderRadius:3,borderSkipped:false},{label:'Drenou',data:[-33],backgroundColor:'rgba(239,68,68,0.7)',borderRadius:3,borderSkipped:false}]},options:{...base,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>(c.raw>0?'+':'')+c.raw+' BB'}}},scales:{x:{ticks:{color:tc,font:{size:10}},grid:{color:gc},border:{color:'transparent'}},y:{ticks:{color:tc,font:{size:10},callback:v=>(v>0?'+':'')+v},grid:{color:gc},border:{color:'transparent'}}}}});
+
+// LIPÍDIOS
+new Chart(document.getElementById('lipChart'),{type:'line',data:{labels:['jul/24','abr/25','mai/25','ago/25','dez/25','mar/26'],datasets:[{label:'HDL',data:[37,40,null,37,26,27],borderColor:'#ef4444',borderWidth:2,pointRadius:4,tension:0.3,fill:false,pointBackgroundColor:'#ef4444',pointBorderColor:'#fff',pointBorderWidth:1.5},{label:'LDL',data:[123,142,null,119,134,127],borderColor:'#3b82f6',borderWidth:2,pointRadius:4,tension:0.3,fill:false,borderDash:[5,3],pointBackgroundColor:'#3b82f6',pointBorderColor:'#fff',pointBorderWidth:1.5},{label:'Trigl.',data:[97,85,null,85,107,148],borderColor:'#f59e0b',borderWidth:2,pointRadius:4,tension:0.3,fill:false,borderDash:[3,3],pointBackgroundColor:'#f59e0b',pointBorderColor:'#fff',pointBorderWidth:1.5}]},options:{...base,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.raw+' mg/dL'}}}}});
+
+// GLICEMIA
+new Chart(document.getElementById('glicChart'),{type:'line',data:{labels:['jul/24','abr/25','mai/25','ago/25','dez/25','mar/26'],datasets:[{label:'Glicose',data:[104,107,98,95,94,98],borderColor:'#3b82f6',borderWidth:2,pointRadius:4,tension:0.3,fill:false,pointBackgroundColor:'#3b82f6',pointBorderColor:'#fff',pointBorderWidth:1.5},{label:'HOMA-IR×10',data:[43,null,26,23,25,31],borderColor:'#f59e0b',borderWidth:2,pointRadius:4,tension:0.3,fill:false,borderDash:[5,3],pointBackgroundColor:'#f59e0b',pointBorderColor:'#fff',pointBorderWidth:1.5}]},options:{...base,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label==='HOMA-IR×10'?'HOMA-IR
